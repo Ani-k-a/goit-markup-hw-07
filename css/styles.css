@@ -40,7 +40,7 @@ header .container {
   display: flex;
   align-items: center;
 }
-.list {
+ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -111,28 +111,32 @@ header .container {
   background-color: var(--accent-colore);
   transform: scaleX(1);
 }
-.contacts {
+.contacts__list {
   display: flex;
+  color: var(--light-text-colore);
+  fill: var(--light-text-colore);
 }
-.contacts .item {
+.contacts__list {
   transition-property: color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contacts .item:hover,
-.contacts .item:focus {
+.contacts__item + .contacts__item {
+  margin-left: 50px;
+}
+.contacts__item:hover, .contacts__item:focus {
   color: var(--accent-colore);
   fill: var(--accent-colore);
 }
-.contacts .item + .item {
-  margin-left: 50px;
+.contacts__item {
+  display: flex;
+  align-items: center;
 }
-.contacts.list {
-  color: var(--light-text-colore);
-  fill: var(--light-text-colore);
+.contacts__icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
-
-.contacts a {
+.contacts__link {
   color: currentColor;
   display: inline-flex;
   align-items: center;
@@ -142,16 +146,6 @@ header .container {
   letter-spacing: 0.02em;
   text-decoration: none;
 }
-.item.mailtop,
-.item.phonetop {
-  display: flex;
-  align-items: center;
-}
-.contacts.list .icon {
-  margin-right: 10px;
-  fill: currentColor;
-}
-
 section {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -176,7 +170,7 @@ section {
 .hero .container {
   text-align: center;
 }
-.hero .slogan {
+.hero__slogan {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -223,8 +217,8 @@ background-color: var(--button-accent-color);
 .features {
   background-color: var(--white-colore);
 }
-.features-title,
-.portfolio-title {
+.features__title,
+.portfolio__title {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -236,7 +230,11 @@ background-color: var(--button-accent-color);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.image.box {
+.features__list {
+  display: flex;
+  margin: 0;
+}
+.features__box {
   box-sizing: border-box;
   position: relative;
   object-fit: none;
@@ -249,17 +247,13 @@ background-color: var(--button-accent-color);
   background-color: var(--backgroud-light-colore);
   border-radius: 4px;
 }
-.features.list {
-  display: flex;
-  margin: 0;
-}
-.features.list .item {
+.features__item {
   width: 270px;
 }
-.features.list .item + .item {
+.features__item + .features__item {
   margin-left: 30px;
 }
-.features.list h3 {
+.features__point {
   margin-top: 0;
   margin-bottom: 10px;
   font-style: normal;
@@ -268,24 +262,23 @@ background-color: var(--button-accent-color);
   line-height: 1.14;
   text-transform: uppercase;
 }
-.features.list p {
+.features__description {
   margin: 0;
   color: var(--light-text-colore);
   font-size: 14px;
   line-height: 1.5;
 }
-
 .services {
   background-color: var(--white-colore);
 }
 section.services {
   padding-top: 0;
 }
-.services.list {
+.services__list {
   justify-content: space-between;
   display: flex;
 }
-.section-title {
+.team__title, .clients__title, .services__title {
   margin-top: 0;
   margin-bottom: 50px;
   font-weight: 700;
@@ -293,19 +286,19 @@ section.services {
   line-height: 1.17;
   text-align: center;
 }
-.services .item {
+.services__item {
   position: relative;
   overflow: hidden;
 }
-.services.list .item + .item {
+.services__item + .services__item {
   margin-left: 30px;
 }
-.services img {
+.services__image {
   display: block;
   height: auto;
   max-width: 100%;
 }
-.lable {
+.services__lable {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -325,30 +318,31 @@ section.services {
 .team {
   background-color: var(--backgroud-light-colore);
 }
-.team.list {
+.team__list {
   justify-content: space-between;
   text-align: center;
   display: flex;
 }
-.item.position {
+.team__item {
   background-color: var(--white-colore);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.team .item + .item {
+.team__item + .team__item {
   margin-left: 30px;
 }
-.team .leads {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-.team img {
+.team__image {
   display: block;
   height: auto;
   max-width: 100%;
 }
-.team h3 {
+.team__lead {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team__name {
   margin-top: 0;
   margin-bottom: 10px;
   font-style: normal;
@@ -357,7 +351,7 @@ section.services {
   line-height: 1.19;
   text-align: center;
 }
-.team p {
+.tem__position {
   margin-top: 0;
   margin-bottom: 16px;
   color: var(--light-text-colore);
@@ -393,13 +387,13 @@ section.services {
   fill: var(--white-colore);
 }
 
-.clients.list {
+.clients__list {
   margin-top: auto;
   justify-content: space-between;
   text-align: center;
   display: flex;
 }
-.clients.list a {
+.clients__link {
   transition-property: border-color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -417,18 +411,26 @@ section.services {
   border: 1px solid var(--clients-border-color);
   border-radius: 4px;
 }
-.clients.list a:hover,
-.clients.list a:focus {
+.clients__link:hover,
+.clients__link:focus {
   border-color: var(--accent-colore);
   fill: var(--accent-colore);
 }
-.clients.list .item + .item {
+.clients__item + .clients__item {
   margin-left: 30px;
 }
 .portfolio {
   background-color: var(--white-colore);
 }
-.base.button,
+.portfolio__list {
+  justify-content: center;
+  margin-bottom: 50px;
+  display: flex;
+}
+.portfolio__item + .portfolio__item {
+  margin-left: 8px;
+}
+.portfolio__button,
 .current.button {
   transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
@@ -438,16 +440,7 @@ section.services {
   line-height: 1.63;
   letter-spacing: 0.03em;
 }
-.portfolio.list {
-  justify-content: center;
-  margin-bottom: 50px;
-  display: flex;
-}
-.portfolio.list .item + .item {
-  margin-left: 8px;
-}
-.portfolio.list button:hover,
-.portfolio.list button:focus {
+.portfolio__button:hover, .portfolio__button:focus {
   color: var(--white-colore);
   background-color: var(--accent-colore);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),

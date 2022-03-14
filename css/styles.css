@@ -435,16 +435,18 @@ background-color: var(--button-accent-color);
 .portfolio {
   background-color: var(--white-colore);
 }
-.portfolio__list {
+.filtr__list {
   justify-content: center;
   margin-bottom: 50px;
   display: flex;
 }
-.portfolio__item + .portfolio__item {
-  margin-left: 8px;
+.filtr__item {
+  margin-right: 8px;
 }
-.portfolio__button,
-.current.button {
+.filtr__item--last {
+  margin-right: 0px;
+}
+.filtr__button {
   transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -452,24 +454,27 @@ background-color: var(--button-accent-color);
   font-weight: 500;
   line-height: 1.63;
   letter-spacing: 0.03em;
+  background-color: var(--backgroud-light-colore);
+  color: var(--primary-text-colore);
+  box-shadow: none;
 }
-.portfolio__button:hover, .portfolio__button:focus {
+.filtr__button:hover, .filtr__button:focus {
   color: var(--white-colore);
   background-color: var(--accent-colore);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.current.button {
+.filtr__button--current {
   color: var(--white-colore);
   background-color: var(--accent-colore);
 }
 
-.projects.list {
+.projects-list {
   justify-content: end;
   display: flex;
   flex-wrap: wrap;
 }
-.projects.list .item {  
+.projects-list__item {  
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -477,36 +482,35 @@ background-color: var(--button-accent-color);
   margin-bottom: 30px;
   background-color: var(--white-colore);
 }
-.link.card .card {position: relative;
+.projects-list__link {
+  text-decoration: none;
+}
+.projects-list__card {position: relative;
    overflow: hidden;}
 
-.projects.list .item:nth-child(3n) {
+.projects-list__item:nth-child(3n) {
   margin-right: 0;
 }
-.projects.list .item:nth-last-child(-n + 3) {
+.projects-list__item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
-.projects.list .item:hover,
-.projects.list .item:focus {
+.projects-list__item:hover,
+.projects-list__item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.link.card {
-  text-decoration: none;
-}
+
 /* Второй вариант реализации */
 /* .projects.list .item:not(:nth-child(3n)) {margin-right: 24px;}
 .projects.list .item:not(:nth-last-child(-n+3)) {margin-bottom: 24px;} */
 
-.projects.list .info {
+.projects-list__info {
   border-right: 1px solid var(--portfolio-background-colore);
   border-bottom: 1px solid var(--portfolio-background-colore);
   border-left: 1px solid var(--portfolio-background-colore);
   padding: 20px 24px;
-  
 }
-
-.projects h2 {
+.projects-list__title {
   color: var(--primary-text-colore);
   margin-top: 0;
   margin-bottom: 4px;
@@ -514,19 +518,16 @@ background-color: var(--button-accent-color);
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  background-color: var(--white-colore);
 }
-.projects p {
+.projects-list__description {
   text-decoration: none;
   margin-top: 0;
   margin-bottom: 0;
   color: var(--light-text-colore);
   line-height: 1.88;
-}
-.projects h2,
-.projects p {
   background-color: var(--white-colore);
 }
-
 .overlay {
   transition-property: background-colore;
   transition-duration: 250ms;
@@ -542,7 +543,7 @@ background-color: var(--button-accent-color);
   border-radius: 2px;
   
 }
-.overlay.text {
+.overlay__text {
   position: absolute;
   font-size: 18px;
   line-height: 1.56;
@@ -550,8 +551,8 @@ background-color: var(--button-accent-color);
   color: var(--white-colore);
   padding: 63px 24px;
 }
-.projects.list .item:hover .overlay,
-.projects.list .item:focus .overlay {
+.projects-list__item:hover .overlay,
+.projects-list__item:focus .overlay {
   transform: translateY(0);
   opacity: 1;
   background-color: var(--accent-colore);
@@ -818,4 +819,7 @@ background-color: var(--button-accent-color);
   border: transparent;
   background-color: var(--accent-colore);
   }
-
+.form__button {
+  justify-content: center;
+  width: 200px;
+}

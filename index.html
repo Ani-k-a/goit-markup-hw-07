@@ -15,7 +15,7 @@
     <header>
       <div class="container">
         <nav class="site-nav">
-          <a class="logo" href="./index.html" lang="en">Web<span class="logo-dark">Studio</span></a>
+          <a class="logo site-nav__logo" href="./index.html" lang="en">Web<span class="logohalf site-nav__logohalf">Studio</span></a>
           <ul class="site-nav__list">
             <li class="site-nav__item">
              <a class="site-nav__link site-nav__link--current" href="./index.html">Студия</a>
@@ -53,56 +53,54 @@
         <!-- Модальное окно ----->
         <div class="backdrop is-hidden" data-modal>
           <div class="modal">
-            <button class="modal-close button"  type="button" data-modal-close>
-                <svg class="modal-close icon">
+            <button class="modal__button"  type="button" data-modal-close>
+                <svg class="modal__icon">
                   <use href="./images/symbol-defs.svg#icon-close"></use>
                 </svg>
             </button>
-            <div class="callback">
-              <p class="action callback">Оставьте свои данные, мы вам перезвоним</p>
-              <form action="#" name="form callback" class="form-callback">
-                <label class="modal-lable">
+            <div class="form">
+              <p class="form__title">Оставьте свои данные, мы вам перезвоним</p>
+              <form action="#" name="form" class="form__field">
+                <label class="form__lable">
                   Имя
-                  <span class="form-field-wrapper">
-                    <input class="modal-input" type="name" name="user-name" required />
-                    <svg class="modal-icon name">
+                  <span class="form__wrapper">
+                    <input class="form__input" type="name" name="user-name" required />
+                    <svg class="form__icon">
                       <use href="./images/symbol-defs.svg#icon-person-black"></use>
                    </svg>
                 </span>
                 </label>
-                <label class="modal-lable">
+                <label class="form__lable">
                   Телефон
-                  <span class="form-field-wrapper">
-                    <input class="modal-input" type="tel" name="user-phone" required />
-                    <svg class="modal-icon phone">
+                  <span class="form__wrapper">
+                    <input class="form__input" type="tel" name="user-phone" required />
+                    <svg class="form__icon">
                       <use href="./images/symbol-defs.svg#icon-phone-black"></use>
                     </svg>
                   </span>
                 </label>
-                <label class="modal-lable">
+                <label class="form__lable">
                   Почта
-                  <span class="form-field-wrapper">
-                    <input class="modal-input" type="email" name="user-mail" required />
-                    <svg class="modal-icon envelope">
+                  <span class="form__wrapper">
+                    <input class="form__input" type="email" name="user-mail" required />
+                    <svg class="form__icon">
                       <use href="./images/symbol-defs.svg#icon-email-black"></use>
                     </svg>
                   </span>
                 </label>
-                <label class="modal-lable">
+                <label class="form__lable">
                   Комментарий
-                <textarea class="modal-textarea" name="modal-textarea" placeholder="Введите текст"></textarea>
-                </label>
-
-
-                <label class="modal-lable checkbox">
-                  <input class="checkbox" type="checkbox" name="checkbox" required />
-                  <svg class="modal-icon-checkbox">
-                    <use href="./images/symbol-defs.svg#icon-icon-check"></use>
+                <textarea class="form__input form__input--textarea" name="modal-textarea" placeholder="Введите текст"></textarea>
+                </label>           
+                <label class=" form__lable form__lable--checkbox">
+                  <input class="form__input--checkbox" type="checkbox" name="checkbox" required />
+                  <svg class="form__icon--checkbox">
+                      <use href="./images/symbol-defs.svg#icon-icon-check"></use>
                   </svg>
-                  <span class="checkbox-text">Соглашаюсь с рассылкой принимаю <a class="checkbox-link" href="">Условия договора</a></span>
+                  <span class="form__text--checkbox">Соглашаюсь с рассылкой принимаю <a class="form__link form__link--checkbox" href="">Условия договора</a></span>
                 </label>
               </form>
-              <button class="callback button" type="submit">Отправить</button>
+              <button class="button form__button" type="submit">Отправить</button>
             </div>
           </div>
         </div>
@@ -374,15 +372,15 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="container footer">
+    <footer class="footer">
+      <div class="container footer__container">
         <div>
-          <a href="./index.html" class="footer logo" lang="en">Web<span class="logo-white">Studio</span></a>
+          <a href="./index.html" class="logo footer__logo" lang="en">Web<span class="logohalf footer__logohalf">Studio</span></a>
         <address class="address">
-        <ul class="address list">
-          <li class="item"><a href="https://goo.gl/maps/MGJX9YuurSDHEr8T9" target="_blank" rel="noopen noreferrer">г. Киев, пр-т Леси Украинки, 26</a></li>
-          <li class="item mail"><a href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-          <li class="item phone"><a href="tell:+380961111111">+38 096 111 11 11</a></li>
+        <ul class="address__list">
+          <li class="address__item"><a class="address__link" href="https://goo.gl/maps/MGJX9YuurSDHEr8T9" target="_blank" rel="noopen noreferrer">г. Киев, пр-т Леси Украинки, 26</a></li>
+          <li class="address__item"><a class="address__link address__link--gray" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+          <li class="address__item address__item--last"><a class="address__link address__link--gray" href="tell:+380961111111">+38 096 111 11 11</a></li>
         </ul>
       </address>
         </div>

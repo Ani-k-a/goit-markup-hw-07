@@ -1,0 +1,22 @@
+.address__link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--white-colore);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+
+  &--gray {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  &:hover,
+  .address__link:focus {
+    color: var(--accent-colore);
+  }
+}
+.address__item:not(:last-child) {
+  margin-bottom: 9px;
+}

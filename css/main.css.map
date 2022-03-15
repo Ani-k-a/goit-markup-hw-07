@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/main.scss",
+        "../sass/base/_base.scss",
+        "../sass/utils/_variables.scss",
+        "../sass/components/_btn.scss",
+        "../sass/components/_header.scss",
+        "../sass/components/_hero.scss",
+        "../sass/components/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
